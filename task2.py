@@ -9,7 +9,7 @@ report = defaultdict(list)  # {name : [employees_salaryes]}
 DATASET_FILENAME = 'funcs_homework_employees_sample.csv'
 
 
-def read_dataset() -> None:
+def read_dataset():
     """Read dataset and place data in departmenst_names
        and report variables"""
 
@@ -21,18 +21,17 @@ def read_dataset() -> None:
         reader = DictReader(fin, delimiter=";")
 
         for row in reader:  # ФИО полностью;Должность;Отдел;Оценка;Оклад
-            departments_names.add(row['Должность'])
+            departments_names.add(row['Отдел'])
             report[row['Отдел']].append(row['Оклад'])
-    return
 
 
-def print_departments() -> None:
+def print_departments():
     """Print out departmenst_names variable"""
 
     pprint(departments_names)
 
 
-def print_report() -> None:
+def print_report():
     """Proccess report varibale and print out"""
 
     for k, v in report.items():
@@ -44,7 +43,7 @@ def print_report() -> None:
               "Mean salary: {:.2f};\n".format(k, len(v), min(vv), max(vv), sum(vv) / len(v)))
 
 
-def save_report() -> None:
+def save_report():
     """Save report in report.csv file"""
 
     with open("report.csv", "w", encoding='utf-8') as fout:
@@ -58,7 +57,7 @@ def save_report() -> None:
                 field_names, (k, len(v), min(vv), max(vv), sum(vv) / len(v)))})
 
 
-def menu() -> None:
+def menu():
     """Usage:
         1. Print out all departments names.
         2. Print out departments report:
