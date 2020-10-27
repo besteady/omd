@@ -1,30 +1,31 @@
-from typing import List
+from typing import List, Counter, OrderedDict
+from collections import Counter, OrderedDict
+from itertools import chain
+
+
+class OrderedCounter(Counter, OrderedDict):
+    pass
 
 
 class CountVectorizer():
     def __init__(self):
-        self.feature_names = []
+        self.feature_names = None
 
     def fit_transform(self, corpus: List[str]) -> List[List[int]]:
-        unique_words = []
-
         tbl = [row.lower().split() for row in corpus]
 
-        for row in tbl:
-            for x in row:
-                if x not in unique_words:
-                    unique_words.append(x)
-
-        self.feature_names = list(unique_words)
+        self.feature_names = OrderedCounter(chain(*tbl)).keys()
 
         matr = []
         for row in tbl:
-            matr.append(list(map(lambda x: row.count(x), self.feature_names)))
+            d = OrderedDict().fromkeys(self.feature_names, 0)
+            d.update(Counter(row))
+            matr.append(list(d.values()))
 
         return matr
 
     def get_feature_names(self):
-        return self.feature_names
+        return list(self.feature_names)
 
 
 if __name__ == "__main__":
