@@ -7,7 +7,7 @@ class OrderedCounter(Counter, OrderedDict):
     pass
 
 
-class CountVectorizer():
+class CountVectorizer:
     def __init__(self):
         self.feature_names = None
 
@@ -30,17 +30,29 @@ class CountVectorizer():
 
 if __name__ == "__main__":
     corpus = [
-        'Crock Pot Pasta Never boil pasta again',
-        'Pasta Pomodoro Fresh ingredients Parmesan to taste'
+        "Crock Pot Pasta Never boil pasta again",
+        "Pasta Pomodoro Fresh ingredients Parmesan to taste",
     ]
 
     vectorizer = CountVectorizer()
     count_matrix = vectorizer.fit_transform(corpus)
 
-    assert vectorizer.get_feature_names() == \
-        ['crock', 'pot', 'pasta', 'never',
-         'boil', 'again', 'pomodoro', 'fresh', 'ingredients', 'parmesan', 'to',
-         'taste'], f'{vectorizer.get_feature_names()}'
+    assert vectorizer.get_feature_names() == [
+        "crock",
+        "pot",
+        "pasta",
+        "never",
+        "boil",
+        "again",
+        "pomodoro",
+        "fresh",
+        "ingredients",
+        "parmesan",
+        "to",
+        "taste",
+    ], f"{vectorizer.get_feature_names()}"
 
-    assert count_matrix == [[1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0], [
-        0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1]], f'{count_matrix}'
+    assert count_matrix == [
+        [1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+    ], f"{count_matrix}"
