@@ -32,8 +32,8 @@ print()
 
 
 advert = Advert(json_parsed)
-print(advert)
-print(advert.location.address)
+print(f"{advert=}")
+print(f"{advert.location.address=}")
 print()
 
 
@@ -41,6 +41,6 @@ pprint(corgi_parsed)
 print()
 
 advert = Advert(corgi_parsed)
-print(advert)
-print(advert.class_)
+print(f"{advert=}")
+print(f"{advert.class_=}")
 print()
