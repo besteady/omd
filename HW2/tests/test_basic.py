@@ -30,18 +30,9 @@ class TestAdvertClassSimple(unittest.TestCase):
         )
         self.assertEqual(advert.location.metro_stations, ["Спортивная", "Гагаринская"])
 
-    def test_field_access_default_and_neg_price(self):
+    def test_field_access_default(self):
         json_sample_str1 = """{
             "title": "iPhone X",
-            "location": {
-                "address": "город Самара, улица Мориса Тореза, 50",
-                "metro_stations": ["Спортивная", "Гагаринская"]
-            }
-        }"""
-
-        json_sample_str2 = """{
-            "title": "iPhone X",
-            "price": -100
             "location": {
                 "address": "город Самара, улица Мориса Тореза, 50",
                 "metro_stations": ["Спортивная", "Гагаринская"]
@@ -51,8 +42,18 @@ class TestAdvertClassSimple(unittest.TestCase):
         advert = AdvertResolver.Advert(json.loads(json_sample_str1))
         self.assertEqual(advert.price, 0)
 
+    def test_field_access_neg_price(self):
+        json_sample_str2 = """{
+            "title": "iPhone X",
+            "price": -100
+            "location": {
+                "address": "город Самара, улица Мориса Тореза, 50",
+                "metro_stations": ["Спортивная", "Гагаринская"]
+            }
+        }"""
+
         with self.assertRaises(ValueError):
-            advert = AdvertResolver.Advert(json.loads(json_sample_str2))
+            AdvertResolver.Advert(json.loads(json_sample_str2))
 
     def test_sz_arg(self):
         advert = AdvertResolver.Advert(self.json_sample_str)
