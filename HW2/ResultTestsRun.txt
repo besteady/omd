@@ -1,0 +1,11 @@
+test_failed_field_access (tests.test_basic.TestAdvertClassSimple) ... ok
+test_field_access_default_and_neg_price (tests.test_basic.TestAdvertClassSimple) ... ok
+test_field_access_simple (tests.test_basic.TestAdvertClassSimple) ... ok
+test_repr (tests.test_basic.TestAdvertClassSimple) ... ok
+test_sz_arg (tests.test_basic.TestAdvertClassSimple) ... ok
+test_with_reserved (tests.test_basic.TestAdvertClassSimple) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK
