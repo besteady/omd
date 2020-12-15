@@ -1,0 +1,9 @@
+testDMY (test_basic.TestWhatIsYearNow) ... ok
+testIncorFormat (test_basic.TestWhatIsYearNow) ... ok
+testMain (test_basic.TestWhatIsYearNow) ... ok
+testYMD (test_basic.TestWhatIsYearNow) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.011s
+
+OK
