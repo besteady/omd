@@ -1,0 +1,9 @@
+testCorrSimple (test_basic.TestFitTransformSimple) ... ok
+testCorrWithArgs (test_basic.TestFitTransformSimple) ... ok
+testIncorArgTypes (test_basic.TestFitTransformSimple) ... ok
+testIncorWithoutArgs (test_basic.TestFitTransformSimple) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK
