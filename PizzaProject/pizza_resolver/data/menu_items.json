@@ -1,0 +1,52 @@
+{
+    "menuVersion": 1.0,
+    "items": [
+        {
+            "itemKind": "BaseItem",
+            "name": "Cola",
+            "price": "5"
+        },
+        {
+            "itemKind": "PizzaItem",
+            "name": "Margherita",
+            "price": "100",
+            "recept": [
+                "tomato sauce",
+                "mozzarella",
+                "tomatoes"
+            ],
+            "possible_sizes": [
+                "L",
+                "XL"
+            ]
+        },
+        {
+            "itemKind": "PizzaItem",
+            "name": "Pepperoni",
+            "price": "150",
+            "recept": [
+                "tomato sauce",
+                "mozzarella",
+                "pepperoni"
+            ],
+            "possible_sizes": [
+                "L"
+            ]
+        },
+        {
+            "itemKind": "PizzaItem",
+            "name": "Hawaiian",
+            "price": "200",
+            "recept": [
+                "tomato sauce",
+                "mozzarella",
+                "chicken",
+                "pineapples"
+            ],
+            "possible_sizes": [
+                "L",
+                "XL"
+            ]
+        }
+    ]
+}
